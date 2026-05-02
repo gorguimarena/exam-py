@@ -27,7 +27,7 @@ class CloudinaryService:
 
         # Garder uniquement la partie utile après /upload/
         path_after_upload = path.split(upload_marker, 1)[1].lstrip("/")
-        known_folder = "supply-management/produits/"
+        known_folder = "gestion-approvisionnement/produits/"
 
         # Nos images sont stockées dans ce dossier: c'est le point d'ancrage
         if known_folder in path_after_upload:
@@ -84,7 +84,7 @@ class CloudinaryService:
             # Upload sur Cloudinary
             result = cloudinary.uploader.upload(
                 contents,
-                folder="supply-management/produits",
+                folder="gestion-approvisionnement/produits",
                 resource_type="image"
             )
             

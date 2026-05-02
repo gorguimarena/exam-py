@@ -1,0 +1,22 @@
+services:
+
+  postgres:
+    image: postgres:17
+    container_name: examen
+    environment:
+      POSTGRES_DB: examen_221
+      POSTGRES_USER: examen_user
+      POSTGRES_PASSWORD: examen_password
+    ports:
+      - '5434:5432'
+    volumes:
+      - examen_data:/var/lib/postgresql/data
+    networks:
+      - examen-node-network
+
+volumes:
+  examen_data:
+
+networks:
+  examen-node-network:
+    driver: bridge
